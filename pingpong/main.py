@@ -44,7 +44,7 @@ game = True
 finish = False
 
 player1 = Player("palka.png", 10, 345, 200)
-player2 = Player2("palka.png", 10, 340, 200)
+player2 = Player2("palka.png", 10, -250, 200)
 
 
 font.init()
