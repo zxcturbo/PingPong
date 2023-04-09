@@ -37,6 +37,13 @@ class Player2(GameSprite):
         if keys_pressed[K_s] and self.rect.y < 410:
             self.rect.y += self.speed
 
+class Ball(GameSprite):
+    def __init__(self, player_image, player_speed, player_x, player_y):
+        super().__init__(player_image, player_speed, player_x, player_y)
+    def update(self):
+        if self.rect.x <= 3:
+            self.rect.x = self.rect.x * -1
+
 
 background = transform.scale(image.load('fon.jpg'), (700,500))
 
@@ -45,6 +52,7 @@ finish = False
 
 player1 = Player("palka.png", 10, 345, 200)
 player2 = Player2("palka.png", 10, -250, 200)
+ball = Ball('png_ball.png', 5, 40, 200)
 
 
 font.init()
